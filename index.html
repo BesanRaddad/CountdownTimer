@@ -1,0 +1,72 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+   <meta name="viewport" content="width=device-width" />
+  <title>Countdown Timer</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css" />
+  <link rel="stylesheet" href="main.css" />
+  
+</head>
+<body>
+   <div class="container">
+    <h2 class="title">
+       Countdown Timer ⏳
+    </h2>
+    <div class="input-container">
+    <input type="text" id="dateInput" placeholder="Select date & time" />
+    <button onclick="startCountdown()">
+      Start the countdown
+    </button>
+    </div>
+
+  <div id="countdown-container" style="display: none;">
+    <div class="circle" id="days">
+      <span class="number">0</span>
+       <div class="label">
+          DAYS
+      </div>
+    </div>
+    <div class="circle" id="hours">
+      <span class="number">0</span>
+       <div class="label">
+         HOURS
+       </div>
+    </div>
+    <div class="circle" id="minutes">
+      <span class="number">0</span>
+       <div class="label">
+         MINUTES
+       </div>
+    </div>
+    <div class="circle" id="seconds">
+      <span class="number">0</span>
+       <div class="label">
+         SECONDS
+       </div>
+    </div>
+  </div>
+
+  <p id="done-msg"></p>
+   </div>
+  
+  <audio id="endSound" src="bike-bell-173588.mp3" preload="auto"></audio>
+ 
+<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+<script>
+flatpickr("#dateInput", {
+  enableTime: true,
+  dateFormat: "d/m/Y  h:i K", 
+  time_24hr: false,
+  locale: "en",
+  minDate: "today",
+  disableMobile: true
+});
+
+</script>
+
+  <script src="main.js"></script>
+</body>
+</html>
+
